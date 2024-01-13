@@ -19,7 +19,7 @@ model Profile{
   email String @db.Text
 
   servers Server[]
-  member Member[]
+  members Member[]
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -35,7 +35,7 @@ model Server{
   profileId String
   profile Profile @relation(fields: [profileId],references: [id],onDelete: Cascade)
 
-  member Member[]
+  members Member[]
   channels Channel[]
 
   createdAt DateTime @default(now())
