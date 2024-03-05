@@ -14,7 +14,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { NavigationSidebar } from "@/components/navigation/navigation-sidbar";
 
 export const LeaveServerModal = () => {
     const { isOpen, onClose, type, data } = useModal();
