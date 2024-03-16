@@ -1,7 +1,8 @@
+import { NextResponse } from "next/server";
+import { Message } from "@prisma/client";
+
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { Message } from "@prisma/client";
-import { NextResponse } from "next/server";
 
 const MESSAGE_BATCH = 10;
 
@@ -65,15 +66,15 @@ export async function GET(
             });
         }
 
-        let NextCursor = null;
+        let nextCursor = null;
 
         if (messages.length === MESSAGE_BATCH) {
-            NextCursor = messages[MESSAGE_BATCH-1].id;
+            nextCursor = messages[MESSAGE_BATCH - 1].id;
         }
 
         return NextResponse.json({
             items: messages,
-            NextCursor
+            nextCursor
         })
 
     } catch (error) {
