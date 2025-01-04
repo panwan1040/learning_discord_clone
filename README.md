@@ -2,6 +2,8 @@
 npm i  
 npm run dev  
 
+setup db
+npx prisma migrate dev --name init
 "open prisma studio"  
 npx prisma studio
 
